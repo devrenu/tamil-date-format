@@ -100,7 +100,7 @@
         let format = (_format != undefined) ? _format : tamil.default;
 
         for (let key in replacer) {
-            format = format.replace(`${key}`, `${replacer[key](this)}`);
+            format = format.replace(new RegExp(`${key}`, "g"), `${replacer[key](this)}`);
         }
 
         return format;
